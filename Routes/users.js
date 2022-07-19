@@ -43,5 +43,11 @@ router.get('/:id',(req, res)=>{
     console.log(foundUser);
 })
 
+router.delete('/:id', (req, res)=>{
+    const { id } = req.params; 
+    users = users.filter((user)=>user.id !== id); 
+    res.send(`User with the id of ${id} has been deleted from the database.`)
+})
+
 
 export default router; 
