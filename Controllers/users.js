@@ -1,5 +1,5 @@
 import {v4 as uuidv4} from 'uuid';
-let users=[
+let blogs=[
     {
       "title":"Maharaja Surajmal Institute of Technology",
       "body": "Maharaja Surajmal is ranked India's 3rd best private Engineering cllg, only behind IIIT Hyderabad and BITS PILANI, it is situated in New Delhi.",
@@ -11,7 +11,6 @@ let users=[
         "body":"Lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
         "writter": "Kanishq Singh Vishwa",
         "id":"2"
-
 
     }
     // { 
@@ -33,6 +32,7 @@ export const createUser =  (req, res)=>{
 }
 
 export const getUsers = (req, res)=>{
+    res.set('Access-Control-Allow-Origin','*');
     res.send(users); 
     // console.log(uuidv4())
 }
