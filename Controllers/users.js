@@ -1,15 +1,17 @@
 import {v4 as uuidv4} from 'uuid';
 let users=[
     {
-        "firstName":"Yuvraj",
-        "lastName":"Singh",
-        "age":18,
-        "id":"1"
+      "title":"Maharaja Surajmal Institute of Technology",
+      "body": "Maharaja Surajmal is ranked India's 3rd best private Engineering cllg, only behind IIIT Hyderabad and BITS PILANI, it is situated in New Delhi.",
+      "writter": "Yuvraj Singh",
+      "id":"1"
     },
     {
         "title": "Skyware Automations",
         "body":"Lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
-        "writter": "Yuvraj Singh"
+        "writter": "Kanishq Singh Vishwa",
+        "id":"2"
+
 
     }
     // { 
