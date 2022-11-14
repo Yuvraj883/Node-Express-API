@@ -5,6 +5,12 @@ let users=[
         "lastName":"Singh",
         "age":18,
         "id":"1"
+    },
+    {
+        "title": "Skyware Automations",
+        "body":"Lorem lipsum lorem lipsum lorem lipsum lorem lipsum",
+        "writter": "Yuvraj Singh"
+
     }
     // { 
     //  "firstName":"Aami",
