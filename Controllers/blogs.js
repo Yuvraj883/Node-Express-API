@@ -21,12 +21,13 @@ let blogs=[
     // }
 ];
 export const createBlog =  (req, res)=>{
-    const user = req.body; 
-    let userId=uuidv4();
-    const userWithId = {...user, id:userId}; 
-    blogs.push(userWithId); 
-    console.log(user);
-     res.send(`User with the name ${req.body.firstName} has been registered to the database`);
+    req.set('no-cors','*');
+    const blog = req.body; 
+    let blogId=uuidv4();
+    const blogWithId = {...blog, id:blogId}; 
+    blogs.push(blogWithId); 
+    console.log(blog);
+     res.send(`A new blog entry ${req.body.title} has been saved to database.`);
     //console.log("Posted successfully!", req.body); 
     // res.send("Posted Successfully!");
 }
