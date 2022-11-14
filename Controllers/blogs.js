@@ -20,28 +20,28 @@ let blogs=[
 
     // }
 ];
-export const createUser =  (req, res)=>{
+export const createBlog =  (req, res)=>{
     const user = req.body; 
     let userId=uuidv4();
     const userWithId = {...user, id:userId}; 
-    users.push(userWithId); 
+    blogs.push(userWithId); 
     console.log(user);
      res.send(`User with the name ${req.body.firstName} has been registered to the database`);
     //console.log("Posted successfully!", req.body); 
     // res.send("Posted Successfully!");
 }
 
-export const getUsers = (req, res)=>{
+export const getBlogs = (req, res)=>{
     res.set('Access-Control-Allow-Origin','*');
     res.send(JSON.stringify(blogs)); 
     // console.log(uuidv4())
 }
 
-export const deleteUser =  (req, res)=>{
+export const deleteBlog =  (req, res)=>{
     const { id } = req.params; 
-    const user = users.find((user)=>user.id===id); 
-    if(user){
-   users = users.filter((user)=>user.id !== id);
+    const blog= blogs.find((blog)=>blog.id===id); 
+    if(blog){
+   blogs = blogs.filter((blog)=>blog.id !== id);
     res.send(`User with the id of ${id} has been deleted from the database.`)
 
     }
@@ -50,14 +50,14 @@ export const deleteUser =  (req, res)=>{
     }
 }
 
-export const updateUser =  (req, res)=>{
+export const updateBlog=  (req, res)=>{
     const {id}= req.params; 
-    const { firstName, lastName, age } = req.body;
-    let user = users.find((user)=>user.id===id); 
-   if(user){
-    if(firstName) user.firstName = firstName; 
-    if(lastName) user.lastName = lastName; 
-    if(age) user.age = age; 
+    const { title, body, writter } = req.body;
+    let blog = blogs.find((blog)=>blog.id===id); 
+   if(blog){
+    if(title) blog.title = title; 
+    if(lastName) blog.body = body; 
+    if(age) blog.writter = writter; 
 
     //users.push(user); 
     res.send(`User with the id of ${id} has been updated`); 
@@ -67,11 +67,11 @@ export const updateUser =  (req, res)=>{
     }
 }
 
-export const getUserWithId = (req, res)=>{
+export const getBlogWithId = (req, res)=>{
     // res.send("Get request with UserId")
     const { id }= req.params;
-    const foundUser = users.find((user) => user.id ===id); 
-    if(foundUser) res.send(foundUser); 
+    const foundBlog = blogs.find((blog) => blog.id ===id); 
+    if(foundBlog) res.send(foundBlog); 
     else res.send(`User with the  id ${id} not found`); 
-    console.log(foundUser);
+    console.log(foundBlog);
 }

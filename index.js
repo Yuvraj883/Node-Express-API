@@ -1,7 +1,7 @@
 import express from 'express'; 
 import bodyParser from 'body-parser'; 
 import send from 'send';
-import usersRoute from './Routes/users.js'
+import usersRoute from './Routes/blogs.js'
 
 
 const app = express(); 
@@ -12,6 +12,6 @@ app.get('/', (req, res)=>{
     res.send("Hello from Home Page");
 })
 
-app.use('/users', usersRoute)
+app.use('/blogs', usersRoute)
 
 app.listen(PORT, ()=>console.log(`Server running on port: http://localhost:${PORT}`)); 
