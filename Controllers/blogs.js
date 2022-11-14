@@ -21,7 +21,7 @@ let blogs=[
     // }
 ];
 export const createBlog =  (req, res)=>{
-    req.set('no-cors','*');
+    req.set('Access-Control-Allow-Origin','*');
     const blog = req.body; 
     let blogId=uuidv4();
     const blogWithId = {...blog, id:blogId}; 
