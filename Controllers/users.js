@@ -33,7 +33,7 @@ export const createUser =  (req, res)=>{
 
 export const getUsers = (req, res)=>{
     res.set('Access-Control-Allow-Origin','*');
-    res.send(users); 
+    res.send(JSON.stringify(blogs)); 
     // console.log(uuidv4())
 }
 
