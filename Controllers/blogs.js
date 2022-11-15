@@ -22,7 +22,7 @@ let blogs=[
 ];
 export const createBlog =  (req, res)=>{
     res.set('Access-Control-Allow-Origin','*');
-    console.log("Posted successfully!", req.body); 
+    console.log("Posted successfully!", req); 
 
     const blog = req.body; 
     let blogId=uuidv4();
