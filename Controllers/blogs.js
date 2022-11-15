@@ -29,7 +29,7 @@ export const createBlog =  (req, res)=>{
     console.log(blog);
      res.send(`A new blog entry ${req.body.title} has been saved to database.`);
     console.log("Posted successfully!", req.body); 
-     res.send("Posted Successfully!");
+    //  res.send("Posted Successfully!");
 }
 
 export const getBlogs = (req, res)=>{
