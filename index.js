@@ -6,7 +6,11 @@ import usersRoute from './Routes/blogs.js'
 
 const app = express(); 
 const PORT = process.env.PORT || 8000; 
-
+app.use(
+    bodyParser.urlencoded({
+      extended: true,
+    })
+  )
 app.use(bodyParser.json()); 
 app.get('/', (req, res)=>{
     res.send("Hello from Home Page");
