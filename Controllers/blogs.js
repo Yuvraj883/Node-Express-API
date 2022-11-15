@@ -21,15 +21,15 @@ let blogs=[
     // }
 ];
 export const createBlog =  (req, res)=>{
-    req.set('Access-Control-Allow-Origin','*');
+    res.set('Access-Control-Allow-Origin','*');
     const blog = req.body; 
     let blogId=uuidv4();
     const blogWithId = {...blog, id:blogId}; 
     blogs.push(blogWithId); 
     console.log(blog);
      res.send(`A new blog entry ${req.body.title} has been saved to database.`);
-    //console.log("Posted successfully!", req.body); 
-    // res.send("Posted Successfully!");
+    console.log("Posted successfully!", req.body); 
+     res.send("Posted Successfully!");
 }
 
 export const getBlogs = (req, res)=>{
