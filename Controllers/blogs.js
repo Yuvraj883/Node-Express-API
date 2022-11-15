@@ -21,7 +21,7 @@ let blogs=[
     // }
 ];
 export const createBlog =  (req, res)=>{
-    res.set('Access-Control-Allow-Origin','*');
+    // res.setHeader('Access-Control-Allow-Origin','*');
     console.log("Posted successfully!", req); 
 
     const blog = req.body; 
@@ -34,7 +34,7 @@ export const createBlog =  (req, res)=>{
 }
 
 export const getBlogs = (req, res)=>{
-    res.set('Access-Control-Allow-Origin','*');
+    // res.setHeader('Access-Control-Allow-Origin','*');
     res.send(JSON.stringify(blogs)); 
     // console.log(uuidv4())
 }
